@@ -1,0 +1,179 @@
+:root {
+    --yellow: #eec679;
+    --green: #60e06e;
+    --dark_green: #6f966d;
+    --dark1: #40433b;
+    --dark2: #111511;
+    --dark3: #000100;
+    --dark4: #2f312c;
+    --weak1: rgba(8, 255, 131, 0.05);
+    --weak2: rgba(251, 255, 0, 0.05);
+}
+
+* {
+    font-family: "Work Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    padding: 20px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/imgs/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+div#logo_cont {
+    width: 320px;
+    height: 100px;
+    margin: auto;
+}
+
+div#logo {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url("../src/imgs/mw_logo.png");
+    background-size: 100% 100%;
+}
+
+div#title {
+    float: right;
+    width: 200px;
+    height: 100px;
+}
+
+div#title > p {
+    margin-top: 30px;
+}
+
+p#txt_title {
+    font-size: 2.1em;
+    font-weight: bold;
+}
+
+header {
+    background-color: var(--dark3);
+    padding-top: 30px;
+    margin-top: -20px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+header > nav > ul {
+    list-style-type: none;
+    width: 480px;
+    margin: auto;
+    height: 40px;
+}
+
+header > nav > ul > li {
+    display: inline;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+header > nav > ul > li:hover {
+    cursor: pointer;
+    background-color: var(--dark4);
+}
+
+div#menu {
+    display: none;
+    background-image: url("../src/imgs/menu.png");
+    height: 40px;
+    width: 100%;
+    background-position: center;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    margin: auto;
+    transition: background-color 0.5s;
+}
+
+div#menu:hover {
+    cursor: pointer;
+    background-color: var(--dark4);
+}
+
+footer {
+    background-color: var(--dark3);
+    text-align: center;
+    padding: 20px;
+}
+
+@media (min-width: 1200px) {
+    
+    main {
+        width: 1200px;
+        min-height: 2000px;
+        background-color: var(--dark2);
+        box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
+        margin: auto;
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (min-width: 720px) and (max-width: 1199px) {
+
+    main {
+        width: 100%;
+        min-height: 2000px;
+        background-color: var(--dark2);
+        margin: auto;
+        padding-bottom: 1px;
+    }
+
+}
+
+@media (max-width: 719px) {
+
+    main {
+        width: 100%;
+        min-height: 2000px;
+        background-color: var(--dark2);
+        margin: auto;
+        padding-bottom: 1px;
+    }
+
+    div#menu {
+        display: block;
+    }
+
+    header > nav > ul {
+        list-style-type: none;
+        width: 100%;
+        height: auto;
+        margin: 0px;
+    }
+
+    header > nav > ul > li {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.5em;
+        transition: background-color 0.5s;
+        border-radius: 0px;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    nav {
+        display: none; /*JS will stabilish the display as block when the user clicks at the button*/
+        margin-top: 0px;
+    }
+}

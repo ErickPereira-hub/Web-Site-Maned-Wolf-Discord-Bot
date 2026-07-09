@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "./style/main.css" rel = "stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body onresize = "correctToggleBehavior()">
+    <header>
+        <div>
+            <div id = "logo_cont">
+                <div id = "logo"></div>
+                <div id = "title">
+                    <p id = "txt_title">Maned Wolf</p>
+                </div>
+            </div>
+        </div>
+        <div id = "menu" onclick = "toggleMenu()">
+        </div>
+        <nav>
+            <ul>
+                <li>about</li>
+                <li onclick = "connectPage('./pages/tutorial/index.html')">tutorial</li>
+                <li>contact</li>
+                <li>access</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    </main>
+    <footer>
+        If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>
+    </footer>
+<script src = "./pages/general_interaction/menu.js"></script>
+<script src = "./pages/general_interaction/page_cnx.js"></script>
+</body>
+</html>

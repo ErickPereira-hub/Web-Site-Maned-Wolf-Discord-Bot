@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "../../style/main.css" rel = "stylesheet">
+    <link href = "./tutorial.css" rel = "stylesheet">
+    <link href = "../modal/modal.css" rel = "stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body onresize = "correctToggleBehavior()">
+    <header>
+        <div>
+            <div id = "logo_cont">
+                <div id = "logo"></div>
+                <div id = "title">
+                    <p id = "txt_title">Maned Wolf</p>
+                </div>
+            </div>
+        </div>
+        <div id = "menu" onclick = "toggleMenu()">
+        </div>
+        <nav>
+            <ul>
+                <li>about</li>
+                <li onclick = "connectPage('./index.html')">tutorial</li>
+                <li>contact</li>
+                <li>access</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Learn how to use the commands</h1>
+        <!--JavaScript will inject the code here-->
+    </main>
+    <footer>
+        If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>
+    </footer>
+    <section class = "modal" id = "imodal">
+        <div class = "x" onclick = "openCloseModal(false)"></div>
+    </section>
+    <script src = "../modal/modal.js" type = "module"></script>
+    <script src = "../general_interaction/menu.js"></script>
+    <script src = "../general_interaction/page_cnx.js"></script>
+    <script src = "./call.js" type = "module"></script>
+</body>
+</html>
