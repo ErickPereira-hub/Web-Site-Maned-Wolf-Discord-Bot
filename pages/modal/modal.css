@@ -27,10 +27,41 @@ section.modal > div.x:hover {
     cursor: pointer;
 }
 
+h2.title_in_modal {
+    padding: 50px;
+    padding-top: 70px;
+    font-size: 2em;
+    text-align: center;
+}
+
+div.img_in_modal {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.473);
+}
+
 @media (max-width: 720px) {
+
     section.modal {
         width: 100%;
         height: 500px;
         border-radius: 0px;
     }
+
+    div.img_in_modal {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+
+    h2.title_in_modal {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
 }
