@@ -4,7 +4,7 @@ export default function injectJSON() {
     const mainHTML = document.getElementsByTagName("main")[0]
     for (let i = 0; i <= infoJSON.length; i++) {
         mainHTML.innerHTML += `
-            <section class = "overall">
+            <section class = "overall extra_bottom_space">
                 <div class = "how_to_container">
                     <div class = "skull_logo"></div>
                     <div class = "how_to">

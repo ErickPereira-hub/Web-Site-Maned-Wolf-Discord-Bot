@@ -73,7 +73,7 @@ nav {
 
 header > nav > ul {
     list-style-type: none;
-    width: 480px;
+    width: 340px;
     margin: auto;
     height: 40px;
 }
@@ -115,11 +115,71 @@ footer {
     padding: 20px;
 }
 
+.overall {
+    width: 80%;
+    padding: 20px;
+    background-color: var(--dark1);
+    border-radius: 8px;
+    border-color: var(--green);
+    border-style: solid;
+    border-width: 2px;
+    margin: auto;
+    box-shadow: 0px 0px 3px var(--green);
+    position: relative;
+    transition: box-shadow 0.5s;
+    margin-bottom: 50px;
+}
+
+.extra_bottom_space {
+    padding-bottom: 80px;
+}
+
+.overall:hover {
+    background-image: linear-gradient(45deg, var(--weak1), var(--weak2));
+    box-shadow: 0px 0px 8px var(--green);
+}
+
+div.access_but {
+    position: relative;
+    position: absolute;
+    right: 10px;
+    height: 50px;
+    width: 200px;
+    background-color: var(--green);
+    bottom: 10px;
+    border-radius: 20px;
+    transition: box-shadow 0.5s;
+    color: black;
+}
+
+div.access_but:hover {
+    box-shadow: 0px 0px 10px var(--green);
+    cursor: pointer;
+}
+
+div.arrow_logo {
+    background-image: url("../src/imgs/next.png");
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div.access_but > p {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 13px;
+    padding-top: 10px;
+}
+
 @media (min-width: 1200px) {
     
     main {
         width: 1200px;
-        min-height: 2000px;
         background-color: var(--dark2);
         box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
         margin: auto;
@@ -132,7 +192,6 @@ footer {
 
     main {
         width: 100%;
-        min-height: 2000px;
         background-color: var(--dark2);
         margin: auto;
         padding-bottom: 1px;
@@ -144,7 +203,6 @@ footer {
 
     main {
         width: 100%;
-        min-height: 2000px;
         background-color: var(--dark2);
         margin: auto;
         padding-bottom: 1px;

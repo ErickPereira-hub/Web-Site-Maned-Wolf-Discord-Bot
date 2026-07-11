@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "./style/main.css" rel = "stylesheet">
+    <link href = "./pages/about/about.css" rel = "stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -23,14 +24,35 @@
         </div>
         <nav>
             <ul>
-                <li>about</li>
+                <li onclick = "connectPage('./index.html')">about</li>
                 <li onclick = "connectPage('./pages/tutorial/index.html')">tutorial</li>
-                <li>contact</li>
-                <li>access</li>
+                <li onclick = "connectPage('./pages/access/index.html')">access</li>
             </ul>
         </nav>
     </header>
     <main>
+        <section class = "overall">
+            <div id = "iphoto"></div>
+            <div id = "overview_txt_cont">
+                <p>
+                    <strong>Maned Wolf Discord Bot</strong> is a tool designed to track and analyze activity across any Discord server. It integrates Discord’s native database with its own, recording and processing operations such as member deletions, message updates, and much more. The bot automatically analyzes server data, generates detailed reports on key elements, and even provides predictive insights, forecasting future trends in membership growth and message activity.
+                </p>
+            </div>
+        </section>
+        <article class = "overall">
+            <h2 style = "text-align: center; padding: 10px;">
+                &#128640; Objectives of the bot
+            </h2>
+            <ul>
+                <li>&#128204; Includes a command that generates a report of member joins, leaves, and the total server count over a user‑defined period. In addition, the report highlights server growth by comparing recent activity with the server’s overall lifecycle.</li>
+                <li>&#128204; Offers a command that estimates upcoming member counts through polynomial regression and reports the margin of error in percentage terms</li>
+                <li>&#128204; Provides commands that calculate the probability of gaining a user‑defined range of new members on the following day (ex.: 10 to 15 members). Similarly, it can evaluate the probability of reaching a specified range of message volume (ex.: 400 to 500 messages) for the next day. These features are implemented using the Poisson distribution</li>
+                <li>&#128204; Includes a command that identifies the most active members across the entire server, as well as a command that does the same thing within a specific channel selected by the user.</li>
+                <li>&#128204; Provides a command that identifies the most active channels in the server, ranked by message volume.</li>
+                <li>&#128204; Includes a command that displays the volume of channels based on NSFW and non-NSFW.</li>
+                <li>&#128204; The commands allow the user to see graphical figures that display the data.</li>
+            </ul>
+        </article>
     </main>
     <footer>
         If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>

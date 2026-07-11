@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "../../style/main.css" rel = "stylesheet">
+    <link href = "./access.css" rel = "stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Document</title>
+</head>
+<body onresize = "correctToggleBehavior()">
+    <header>
+        <div>
+            <div id = "logo_cont">
+                <div id = "logo"></div>
+                <div id = "title">
+                    <p id = "txt_title">Maned Wolf</p>
+                </div>
+            </div>
+        </div>
+        <div id = "menu" onclick = "toggleMenu()">
+        </div>
+        <nav>
+            <ul>
+                <li onclick = "connectPage('../../index.html')">about</li>
+                <li onclick = "connectPage('../tutorial/index.html')">tutorial</li>
+                <li onclick = "connectPage('./index.html')">access</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class = "overall extra_bottom_space">
+            <form>
+                <label for = "isid">Server Id</label>
+                <br>
+                <input type = "text" id = "isid">
+                <br><br>
+                <label for = "itoken">Token</label>
+                <br>
+                <input type = "text" id = "itoken">
+                <input type = "submit" value = "SEND">
+            </form>
+            <p class = 'error'></p>
+            <p>⚠️ Attention: To view the dashboards with your server's data, you must provide the server token. The bot sent this token to you in discord when you integrate with it.</p>
+            <p>If you have a server and you want to integrate your server with this bot, just click <a href = "https://discord.com/oauth2/authorize?client_id=1514003989820084485&permissions=8&integration_type=0&scope=bot" target = "_blank" style = "color: #6cff6c">here</a></p>
+            <div class = "access_but">
+                <p style = "margin-left: 25px;">MOCK</p>
+                <div class = "arrow_logo">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>
+    </footer>
+<script src = "../general_interaction/menu.js"></script>
+<script src = "../general_interaction/page_cnx.js"></script>
+<script src = "./request_listener.js" type = "module"></script>
+<script src = "./generate_dashboard.js" type = "module"></script>
+</body>
+</html>

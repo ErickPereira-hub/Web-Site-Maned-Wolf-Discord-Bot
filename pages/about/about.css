@@ -1,0 +1,52 @@
+div#iphoto {
+    width: 150px;
+    height: 150px;
+    background-image: url("../../src/imgs/mw_photo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--yellow);
+    float: left;
+    margin-right: 20px;
+}
+
+main {
+    padding-top: 30px;
+}
+
+section.overall p {
+    line-height: 25px;
+    word-spacing: 5px;
+    font-size: 1.2em;
+}
+
+div.overview_txt_cont {
+    float: right;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+ul > li {
+    line-height: 25px;
+    padding-bottom: 30px;
+    font-size: 1.2em;
+}
+
+@media (max-width: 450px) {
+    div#iphoto {
+        float: none;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+    
+    div#overview_txt_cont {
+        float: none;
+        padding-top: 20px;
+    }
+}
