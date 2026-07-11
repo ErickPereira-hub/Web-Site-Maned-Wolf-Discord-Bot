@@ -67,3 +67,11 @@ p.error {
     font-size: 1.3em;
     text-align: center;
 }
+
+.dash-title {
+    text-align: center;
+}
+
+.std-dashboard {
+    margin-top: 20px;
+}
