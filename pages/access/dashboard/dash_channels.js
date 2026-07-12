@@ -1,19 +1,10 @@
-export function getTopChannels(JSON, main, palet) {
-
-    //Showing the most active members.
-    main.innerHTML += `
-        <section class = "overall">
-            <h2 class = "dash-title">Information about the channels</h2>
-            <p>The pie chart bellow illustrates the most active channels in the server. It is based on the total number of messages sent in each channel since the integration of the server with the bot.</p>
-            <canvas id = "imost_act_members" class = "std-dashboard"></canvas>
-        </section>
-    ` //<--- Injecting the Channel data in the HTML
+export function getChannelsDashboard(JSON, pallet) {
 
     const mostActiveChannels = JSON["most_active_channels"] //<--- Array of objects with the top channels and quantity of messages.
     const numTopChannels = mostActiveChannels.length;
     const labels = [];
     const spaceValues = [];
-    const colors = [palet["green"], palet["sblue"], palet["wblue"], palet["pink"], palet["yellow"]];
+    const colors = [pallet["COL1"], pallet["COL2"], pallet["COL3"], pallet["COL4"], pallet["COL5"]];
     
     for(let i = 0; i < numTopChannels; i++) {
         const key = Object.keys(mostActiveChannels[i])[0];
@@ -48,4 +39,30 @@ export function getTopChannels(JSON, main, palet) {
         }
     }) //<---Drawing the pie chart in canvas.
 
+    new Chart("insfw", {
+        type : "pie",
+        data : {
+            labels: ["nsfw", "non-nsfw"],
+            datasets: [
+                {
+                    data: [JSON["is_nsfw"]["yes"], JSON["is_nsfw"]["no"]],
+                    backgroundColor : [pallet["COL1"], pallet["COL2"]]
+                }
+            ]
+        },
+        options : {
+            title : {
+                display : true,
+                text : `NSFW distribution`,
+                fontSize : 20,
+                fontColor : "#ffffff"
+            },
+            legend: {
+                labels: {
+                    fontColor: "#ffffff",
+                    fontSize: 15
+                }
+            }
+        }
+    }) //<---Drawing the pie chart in canvas.
 }

@@ -1,18 +1,21 @@
-import { getTopChannels } from "./dashboard/top_channels.js";
+import { getChannelsDashboard } from "./dashboard/dash_channels.js";
+import { getMembersDashboard } from "./dashboard/dash_member_qtt.js";
+import { genDashboardHTML } from "./dashboard/gen_dashboard_HTML.js";
+import { getPoissonForMembersDashboard } from "./dashboard/dash_poisson_member.js"
 
 export function generateDashbord(JSON) {
-    
+    genDashboardHTML(); //<--- Generating the HTML where the dashboard will be placed at.
     console.log(JSON);
-    const main = document.getElementsByTagName("main")[0]; //<--- Accessing the <main> of the webpage.
-    
-    const PALET = {
-        "green" : "#679c67",
-        "sblue" : "#708ad3",
-        "wblue" : "#76c0b0",
-        "pink" : "#9070da",
-        "yellow" : "#96b85f"
+
+    const PALLET = {
+        "COL1" : "#679c67",
+        "COL2" : "#708ad3",
+        "COL3" : "#76c0b0",
+        "COL4" : "#9070da",
+        "COL5" : "#96b85f"
     } //<--- Palet of colors that will be used in the dashboard
 
-    getTopChannels(JSON, main, PALET); //<--- Call the part of the dashboard concerning the most active channels
-
+    getChannelsDashboard(JSON, PALLET); //<--- Call the part of the dashboard concerning the channels
+    getMembersDashboard(JSON, PALLET); //<--- Call the part of the dashboard concerning the members
+    getPoissonForMembersDashboard(JSON, PALLET);
 }
