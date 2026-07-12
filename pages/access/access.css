@@ -76,3 +76,38 @@ p.error {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.show-important-data {
+    width: 90%;
+    margin: auto;
+    height: 35px;
+    background-image: linear-gradient(45deg, rgba(166, 255, 0, 0.2), rgba(0, 204, 255, 0.2));
+    border-radius : 10px;
+    margin-bottom: 10px;
+    transition: width 1.0s, height 1.0s;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 20px;
+    transition: font-size 0.5s;
+}
+
+.show-important-data:hover {
+    font-size: 1.3em;
+    background-image: linear-gradient(45deg, rgba(166, 255, 0, 0.3), rgba(0, 204, 255, 0.3));
+}
+
+.member-cont {
+    display : grid;
+    grid-template-columns: 50% 50%;
+}
+
+.member-cont #imember-graph {
+    grid-column-start: 1;
+    grid-column-end : 3;
+}
+
+@media (max-width:720px) {
+    .member-cont {
+        display : block;
+    }
+}

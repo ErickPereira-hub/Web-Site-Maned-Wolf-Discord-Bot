@@ -1,3 +1,5 @@
+import { stdTitle, stdLegend } from "./std_style.js";
+
 export function getChannelsDashboard(JSON, pallet) {
 
     const mostActiveChannels = JSON["most_active_channels"] //<--- Array of objects with the top channels and quantity of messages.
@@ -12,7 +14,7 @@ export function getChannelsDashboard(JSON, pallet) {
         spaceValues.push(mostActiveChannels[i][key]);//<--- Pushing the number of messages of the key
     }
     
-    new Chart("imost_act_members", {
+    new Chart("imost_act_ch", {
         type : "pie",
         data : {
             labels: labels,
@@ -24,18 +26,8 @@ export function getChannelsDashboard(JSON, pallet) {
             ]
         },
         options : {
-            title : {
-                display : true,
-                text : `Top ${numTopChannels} channels in the server`,
-                fontSize : 20,
-                fontColor : "#ffffff"
-            },
-            legend: {
-                labels: {
-                    fontColor: "#ffffff",
-                    fontSize: 15
-                }
-            }
+            title : stdTitle(`Top ${numTopChannels} channels in the server`),
+            legend: stdLegend(15)
         }
     }) //<---Drawing the pie chart in canvas.
 
@@ -51,18 +43,8 @@ export function getChannelsDashboard(JSON, pallet) {
             ]
         },
         options : {
-            title : {
-                display : true,
-                text : `NSFW distribution`,
-                fontSize : 20,
-                fontColor : "#ffffff"
-            },
-            legend: {
-                labels: {
-                    fontColor: "#ffffff",
-                    fontSize: 15
-                }
-            }
+            title : stdTitle(`NSFW distribution`),
+            legend: stdLegend(15)
         }
     }) //<---Drawing the pie chart in canvas.
 }

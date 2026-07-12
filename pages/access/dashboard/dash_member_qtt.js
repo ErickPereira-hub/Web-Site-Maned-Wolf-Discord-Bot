@@ -1,3 +1,5 @@
+import { stdxAxisStyle, stdTitle, stdLegend } from "./std_style.js";
+
 export function getMembersDashboard(JSON, pallet) {
     
     //Fetching and organazing the data that concerns quantity of members
@@ -58,31 +60,10 @@ export function getMembersDashboard(JSON, pallet) {
             ]
         },
         options : {
-            legend : {
-                labels : {
-                    fontColor : "#ffffff",
-                    fontSize : 20
-                }
-            },
-            title : {
-                display : true,
-                text : `Quantity of members per day for the last ${membersQtt.length} days`,
-                fontSize : 20,
-                fontColor : "#ffffff"
-            },
+            legend : stdLegend(20),
+            title : stdTitle(`Quantity of members per day for the last ${membersQtt.length} days`),
             scales : {
-                xAxes : [
-                    {
-                        gridLines : {
-                            color : "rgba(255, 255, 255, 0.3)",
-                            zeroLineColor : "rgba(255, 255, 255, 0.3)"
-                        },
-                        ticks : {
-                            fontColor : "rgba(255, 255, 255, 0.8)",
-                            fontSize : 25
-                        }
-                    }
-                ],
+                xAxes : stdxAxisStyle,
                 yAxes : [
                     {
                         gridLines : {
