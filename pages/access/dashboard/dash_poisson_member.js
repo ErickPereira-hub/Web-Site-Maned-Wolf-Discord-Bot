@@ -7,15 +7,18 @@ export function getPoissonForMembersDashboard(JSON, pallets) {
     const newMemberProbabilities = JSON["new_member_probability"]["points"];
     const qtt = [];
     const prob = [];
+    
     for (let i = 0; i < newMemberProbabilities.length; i++) {
         qtt.push(newMemberProbabilities[i][0]);
         prob.push(newMemberProbabilities[i][1]);
     }
+    
     const probToShow = {
         from : JSON["new_member_probability"]["from"],
         until : JSON["new_member_probability"]["until"],
         p : JSON["new_member_probability"]["probability"]
     }
+
     const subProb = getSubProbArray(probToShow.from, probToShow.until, newMemberProbabilities);
 
     //Generating the chart
@@ -36,6 +39,6 @@ export function getPoissonForMembersDashboard(JSON, pallets) {
                 }
             ]
         },
-        options : stdHistStyle("Probability distribution for new ammount of members tomorrow")
+        options : stdHistStyle("Probability distribution for new ammount of members tomorrow", pallets, true)
     })
 }

@@ -36,5 +36,5 @@ export function genDashboardHTML(JSON) {
             <p id = "itxt_msg_poisson"></p>
             <canvas id = "inew_msg_dist" class = "std-dashboard"></canvas>
         </section>
-    `
+    ` //<--- This HTML code must be called when the DOM has been started.
 }

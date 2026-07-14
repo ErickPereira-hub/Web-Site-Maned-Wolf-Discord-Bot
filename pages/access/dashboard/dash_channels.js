@@ -1,4 +1,4 @@
-import { stdTitle, stdLegend } from "./std_style.js";
+import { stdHistStyle, stdLegend, stdTitle } from "./std_style.js";
 
 export function getChannelsDashboard(JSON, pallet) {
 
@@ -13,9 +13,9 @@ export function getChannelsDashboard(JSON, pallet) {
         labels.push(key) //<--- Pussing the name of the channel
         spaceValues.push(mostActiveChannels[i][key]);//<--- Pushing the number of messages of the key
     }
-    
+
     new Chart("imost_act_ch", {
-        type : "pie",
+        type : "horizontalBar",
         data : {
             labels: labels,
             datasets: [
@@ -25,10 +25,7 @@ export function getChannelsDashboard(JSON, pallet) {
                 }
             ]
         },
-        options : {
-            title : stdTitle(`Top ${numTopChannels} channels in the server`),
-            legend: stdLegend(15)
-        }
+        options : stdHistStyle(`Top ${numTopChannels} channels in the server`, pallet, false, 0, Math.max(...spaceValues) + 5)
     }) //<---Drawing the pie chart in canvas.
 
     new Chart("insfw", {

@@ -6,18 +6,23 @@ export function getMsgDashboard(JSON, pallet) {
 
     //Extracting and organizing the data from the JSON
     const newMsgProbabilities = JSON["new_msg_probability"]["points"];
-    const qtt = [];
-    const prob = [];
+    const qtt = []; //<--- Volume of messages
+    const prob = []; //<--- Probability of each volume based on Poisson distribution
+    
+    //Filling the arrays of volume and probability
     for (let i = 0; i < newMsgProbabilities.length; i++) {
         qtt.push(newMsgProbabilities[i][0]);
         prob.push(newMsgProbabilities[i][1]);
     }
+    
     const probToShow = {
         from : JSON["new_msg_probability"]["from"],
         until : JSON["new_msg_probability"]["until"],
         p : JSON["new_msg_probability"]["probability"]
-    }
-    const subProb = getSubProbArray(probToShow.from, probToShow.until, newMsgProbabilities);
+    } //<---Probability that will be shown and its volume range
+    
+    const subProb = getSubProbArray(probToShow.from, probToShow.until, newMsgProbabilities); //<--- Subarray with probabilities of a range of volume
+    
     //Generating the chart
     new Chart("inew_msg_dist", {
         type : "bar",
@@ -36,6 +41,6 @@ export function getMsgDashboard(JSON, pallet) {
                 }
             ]
         },
-        options : stdHistStyle("Probability distribution for new ammount of members tomorrow")
+        options : stdHistStyle("Probability distribution for new ammount of members tomorrow", pallet, true)
     })
 }

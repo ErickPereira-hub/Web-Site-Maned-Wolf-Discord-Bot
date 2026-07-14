@@ -3,16 +3,16 @@ import { stdHistStyle, stdLegend, stdTitle } from "./std_style.js";
 export function getMostActiveMembersDashboard(JSON, pallet) {
 
     const mostActiveMembersJSON = JSON["most_active_members"];
-    
-    const labels = []
-    const activity = []
-    for (let i = 0; i < mostActiveMembersJSON.length; i++) {
-        const objMember =  mostActiveMembersJSON[i]
+    const colors = [pallet["COL1"], pallet["COL2"], pallet["COL3"], pallet["COL4"], pallet["COL5"]];
+    const labels = [];
+    const activity = [];
+
+    mostActiveMembersJSON.forEach(data => {
+        const objMember =  data
         const label = Object.keys(objMember)[0];
         labels.push(label);
         activity.push(objMember[label]);
-    }
-    const colors = [pallet["COL1"], pallet["COL2"], pallet["COL3"], pallet["COL4"], pallet["COL5"]];
+    });
 
     new Chart("imost_act_members", {
         type : "pie",

@@ -3,35 +3,43 @@ import { stdxAxisStyle, stdTitle, stdLegend } from "./std_style.js";
 export function getMembersDashboard(JSON, pallet) {
     
     //Fetching and organazing the data that concerns quantity of members
-    let membersQtt = [];
+    let membersQtt = []; //<--- Array that will have the quantity of members for each day
+    const comparativeArray = []; //<--- Will help the chart to take the maximum and minimum of the data with past, present and future data.
+    const arrayPredictions = [];
+    const posArray = []; //<--- Numeric positions of the days (negative is past and positive is future, while 0 is today)
+    const tomorrowPredict = JSON["member_prediction"]["1"]
+    const afterTomorrowPredict = JSON["member_prediction"]["2"]
+    const afterAfterTomorrowPred = JSON["member_prediction"]["3"]
     const arrayMembersObj = JSON["members_qtt"]["data"];
+    const memberDatasetSize = arrayMembersObj.length;
+    const EXTREME_DIST = 2; //<--- Empty distance in the chart
     
-    let memberDatasetSize = arrayMembersObj.length;
-    for (let i = 0; i < memberDatasetSize; i++) {
-        membersQtt.push(arrayMembersObj[i])
-    }
-    
+    arrayMembersObj.forEach(data => {
+        membersQtt.push(data);
+    })
+
     if (memberDatasetSize > 20) {
         membersQtt = membersQtt.slice(memberDatasetSize - 20, memberDatasetSize);
     }
 
-    const posArray = [];
+    
     for (let i = -membersQtt.length; i < 3; i++) {
-        posArray.push(i + 1);
+        posArray.push(i + 1); //<--- Filling the positions
     }
 
-    const tomorrowPredict = JSON["member_prediction"]["1"]
-    const afterTomorrowPredict = JSON["member_prediction"]["2"]
-    const afterAfterTomorrowPred = JSON["member_prediction"]["3"]
-
-    const arrayPredictions = [];
+    for (let i = 0; i < membersQtt.length; i++) {
+        comparativeArray.push(membersQtt[i]); //<--- Filling with data from the past and today
+    }
 
     for (let i = 0; i < membersQtt.length - 1; i++) {
-        arrayPredictions.push(null);
+        arrayPredictions.push(null); //<--- null is important if we want to hide the points. Hiding data from the past
     }
-    arrayPredictions.push(membersQtt[membersQtt.length - 1]);
+
+    arrayPredictions.push(membersQtt[membersQtt.length - 1]); //<--- Placing the todays data
+    
     for (let i = 1; i < 4; i++) {
-        arrayPredictions.push(JSON["member_prediction"][`${i}`]);
+        arrayPredictions.push(JSON["member_prediction"][i]); //<--- Placing data from the future
+        comparativeArray.push(JSON["member_prediction"][i]);
     }
 
     new Chart("imember_qtt", {
@@ -42,8 +50,8 @@ export function getMembersDashboard(JSON, pallet) {
                 {   
                     label : "future",
                     data : arrayPredictions,
-                    backgroundColor: "rgba(136, 255, 0, 0.2)",
-                    borderColor: "rgb(123, 255, 0)",
+                    backgroundColor: pallet["COL6"],
+                    borderColor: pallet["COL10"],
                     pointRadius : 5,
                     fill : true,
                     lineTension : 0
@@ -51,8 +59,8 @@ export function getMembersDashboard(JSON, pallet) {
                 {   
                     label : "past",
                     data: membersQtt,
-                    backgroundColor : "rgba(208, 255, 0, 0.2)",
-                    borderColor: "rgb(123, 255, 0)",
+                    backgroundColor : pallet["COL9"],
+                    borderColor: pallet["COL10"],
                     pointRadius : 5,
                     fill : true,
                     lineTension : 0,
@@ -63,18 +71,18 @@ export function getMembersDashboard(JSON, pallet) {
             legend : stdLegend(20),
             title : stdTitle(`Quantity of members per day for the last ${membersQtt.length} days`),
             scales : {
-                xAxes : stdxAxisStyle,
+                xAxes : stdxAxisStyle(pallet),
                 yAxes : [
                     {
                         gridLines : {
-                            color : "rgba(255, 255, 255, 0.3)",
-                            zeroLineColor : "rgba(255, 255, 255, 0.3)"
+                            color : pallet["COL7"],
+                            zeroLineColor : pallet["COL7"]
                         },
                         ticks : {
-                            fontColor : "rgba(255, 255, 255, 0.8)",
+                            fontColor : pallet["COL8"],
                             fontSize : 25,
-                            min : 0,
-                            max : Math.max(...membersQtt) + 1
+                            min : Math.min(...comparativeArray) - EXTREME_DIST >= 0 ? Math.min(...comparativeArray) - EXTREME_DIST : 0,
+                            max : Math.max(...comparativeArray) + EXTREME_DIST
                         }
                     }
                 ]

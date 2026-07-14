@@ -1,6 +1,7 @@
-export const stdHistStyle = title => {
+export const stdHistStyle = (title, pallet, has_legend, xMin, xMax) => {
     return {
         legend : {
+            display : has_legend,
             labels : {
                 fontColor : "#ffffff",
                 fontSize : 20,
@@ -17,23 +18,25 @@ export const stdHistStyle = title => {
             xAxes : [
                 {
                     gridLines : {
-                        color : "rgba(255, 255, 255, 0.3)",
-                        zeroLineColor : "rgba(255, 255, 255, 0.3)"
+                        color : pallet["COL7"],
+                        zeroLineColor : pallet["COL7"]
                     },
                     ticks : {
-                        fontColor : "rgba(255, 255, 255, 0.8)",
-                        fontSize : 25
+                        fontColor : pallet["COL8"],
+                        fontSize : 25,
+                        min : xMin,
+                        max : xMax
                     }
                 }
             ],
             yAxes : [
                 {
                     gridLines : {
-                        color : "rgba(255, 255, 255, 0.3)",
-                        zeroLineColor : "rgba(255, 255, 255, 0.3)"
+                        color :pallet["COL7"],
+                        zeroLineColor : pallet["COL7"]
                     },
                     ticks : {
-                        fontColor : "rgba(255, 255, 255, 0.8)",
+                        fontColor : pallet["COL8"],
                         fontSize : 25,
                     }
                 }
@@ -42,18 +45,21 @@ export const stdHistStyle = title => {
     }
 }
 
-export const stdxAxisStyle = [
-    {
-        gridLines : {
-            color : "rgba(255, 255, 255, 0.3)",
-            zeroLineColor : "rgba(255, 255, 255, 0.3)"
-        },
-        ticks : {
-            fontColor : "rgba(255, 255, 255, 0.8)",
-            fontSize : 25
+export const stdxAxisStyle = (pallet) =>
+{
+    return [
+        {
+            gridLines : {
+                color : pallet["COL7"],
+                zeroLineColor : pallet["COL7"]
+            },
+            ticks : {
+                fontColor : pallet["COL8"],
+                fontSize : 25
+            }
         }
-    }
-]
+    ]
+}
 
 export const stdTitle = title => {
     return {
