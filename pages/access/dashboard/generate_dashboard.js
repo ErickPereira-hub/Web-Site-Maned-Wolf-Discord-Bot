@@ -1,11 +1,11 @@
-import { getChannelsDashboard } from "./dashboard/dash_channels.js";
-import { getMembersDashboard } from "./dashboard/dash_member_qtt.js";
-import { genDashboardHTML } from "./dashboard/gen_dashboard_HTML.js";
-import { getPoissonForMembersDashboard } from "./dashboard/dash_poisson_member.js"
-import { getMostActiveMembersDashboard } from "./dashboard/dash_most_act_members_pie.js";
-import { getMsgDashboard } from "./dashboard/dash_msg.js";
-import { allZeros, getSubArray } from "./dashboard/utils.js";
-import { mockedJson } from "./dashboard/mocked.js";
+import { getChannelsDashboard } from "./dash_channels.js";
+import { getMembersDashboard } from "./dash_member_qtt.js";
+import { genDashboardHTML } from "./gen_dashboard_HTML.js";
+import { getPoissonForMembersDashboard } from "./dash_poisson_member.js"
+import { getMostActiveMembersDashboard } from "./dash_most_act_members_pie.js";
+import { getMsgDashboard } from "./dash_msg.js";
+import { allZeros, getSubArray } from "./utils.js";
+import { mockedJson } from "./mocked.js";
 
 export function generateDashbord(JSON) {
     genDashboardHTML(JSON); //<--- Generating the HTML where the dashboard will be placed at.

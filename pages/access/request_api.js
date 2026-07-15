@@ -1,4 +1,4 @@
-import { generateDashbord } from "./generate_dashboard.js";
+import { generateDashbord } from "./dashboard/generate_dashboard.js";
 
 const errorMsg = document.getElementsByClassName("error")[0];
 
