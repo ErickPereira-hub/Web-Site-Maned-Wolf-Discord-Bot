@@ -11,17 +11,16 @@ export function generateDashbord(JSON) {
     genDashboardHTML(JSON); //<--- Generating the HTML where the dashboard will be placed at.
 
     const PALLET = {
-        "COL1" : "#679c67",
-        "COL2" : "#708ad3",
-        "COL3" : "#76c0b0",
-        "COL4" : "#9070da",
+        "COL1" : "rgb(167, 74, 74)",
+        "COL2" : "rgb(117, 144, 218)",
+        "COL3" : "rgb(130, 103, 156)",
+        "COL4" : "rgb(201, 190, 129)",
         "COL5" : "#96b85f",
-        "COL6" : "rgba(0, 162, 255, 0.2)",
+        "COL6" : "rgba(117, 144, 218, 0.3)",
         "COL7" : "rgba(255, 255, 255, 0.3)",
         "COL8" : "rgba(255, 255, 255, 0.8)",
-        "COL9" : "rgba(255, 81, 0, 0.2)",
-        "COL10" : "rgb(123, 255, 0)",
-        "COL11" : "rgb(167, 74, 74)"
+        "COL9" : "rgba(167, 74, 74, 0.3)",
+        "COL10" : "rgb(123, 255, 0)"
     } //<--- Palet of colors that will be used in the dashboard
 
     //Calling the charts over the injected HTML

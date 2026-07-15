@@ -10,6 +10,7 @@ export function genDashboardHTML(JSON) {
                 </div>    
                 <div>
                     <p>The pie chart bellow shows the distribution of NSFW and non-NSFW channels in the server.</p>
+                    <p style = "margin-top : -18px;">( * ) NSFW means Not Safe For Work, representing a content warning.</p>
                     <canvas id = "insfw" class = "std-dashboard"></canvas>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export function getPoissonForMembersDashboard(JSON, pallets) {
                 {
                     label : "graph",
                     data : prob,
-                    backgroundColor : pallets["COL11"]
+                    backgroundColor : pallets["COL1"]
                 },
                 {
                     label : `between ${probToShow.from} to ${probToShow.until} new members`,

@@ -32,7 +32,7 @@ export function getMsgDashboard(JSON, pallet) {
                 {
                     label : "overall",
                     data : prob,
-                    backgroundColor : pallet["COL11"]
+                    backgroundColor : pallet["COL1"]
                 },
                 {
                     label : `between ${probToShow.from} to ${probToShow.until} new members`,
