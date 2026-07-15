@@ -5,9 +5,9 @@ import { getPoissonForMembersDashboard } from "./dashboard/dash_poisson_member.j
 import { getMostActiveMembersDashboard } from "./dashboard/dash_most_act_members_pie.js";
 import { getMsgDashboard } from "./dashboard/dash_msg.js";
 import { allZeros, getSubArray } from "./dashboard/utils.js";
+import { mockedJson } from "./dashboard/mocked.js";
 
 export function generateDashbord(JSON) {
-
     genDashboardHTML(JSON); //<--- Generating the HTML where the dashboard will be placed at.
 
     const PALLET = {

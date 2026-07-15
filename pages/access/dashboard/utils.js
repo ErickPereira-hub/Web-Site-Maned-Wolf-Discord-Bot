@@ -4,7 +4,6 @@ export const allZeros = arrayOfNumbers => {
             return false; //If we get here, there is non-zero data
         }
     }
-
     return true //if we get here, it means that everyone is Zero
 }
 

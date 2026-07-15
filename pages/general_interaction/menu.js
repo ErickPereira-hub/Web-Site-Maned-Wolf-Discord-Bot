@@ -7,7 +7,6 @@ function toggleMenu() {
     } else {
         opts.style.display = "block";
     }
-    console.log(showOptsForSmallDevices);
     showOptsForSmallDevices = !showOptsForSmallDevices;
 }
 
