@@ -1,15 +1,10 @@
 :root {
     --yellow: #eec679;
-    --green: #60e06e;
-    --dark_green: #6f966d;
-    --dark1: #32352e;
-    --dark2: #111511;
-    --dark3: #000100;
-    --dark4: #2f312c;
-    --weak1: rgba(8, 255, 131, 0.05);
-    --weak2: rgba(251, 255, 0, 0.05);
-    --super_dark_green: #537453;
-    --dark_bg: #050a05;
+    --white: #ffffff;
+    --gray: #bdbdbd;
+    --dark1: #000100;
+    --dark2: #1a1a1a;
+    --transparent_dark: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -26,12 +21,7 @@ h1 {
 
 body {
     height: 100vh;
-    background-color: var(--dark_bg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
+    color: var(--white);
 }
 
 div#logo_cont {
@@ -64,7 +54,7 @@ p#txt_title {
 }
 
 header {
-    background-color: var(--dark3);
+    background-color: var(--dark1);
     padding-top: 30px;
     margin-top: -20px;
 }
@@ -91,7 +81,7 @@ header > nav > ul > li {
 
 header > nav > ul > li:hover {
     cursor: pointer;
-    background-color: var(--dark4);
+    background-color: var(--dark2);
 }
 
 div#menu {
@@ -108,25 +98,26 @@ div#menu {
 
 div#menu:hover {
     cursor: pointer;
-    background-color: var(--dark4);
+    background-color: var(--dark2);
 }
 
 footer {
-    background-color: var(--dark3);
+    background-color: var(--dark1);
     text-align: center;
     padding: 20px;
 }
 
 .overall {
-    width: 80%;
+    width: 70%;
     padding: 20px;
-    background-color: var(--dark1);
+    background-color: var(--transparent_dark);
+    backdrop-filter: blur(5px);
     border-radius: 8px;
-    border-color: var(--green);
+    border-color: var(--white);
     border-style: solid;
     border-width: 2px;
     margin: auto;
-    box-shadow: 0px 0px 3px var(--green);
+    box-shadow: 0px 0px 3px var(--white);
     position: relative;
     transition: box-shadow 0.5s;
     margin-bottom: 50px;
@@ -137,7 +128,7 @@ footer {
 }
 
 .overall:hover {
-    box-shadow: 0px 0px 8px var(--green);
+    box-shadow: 0px 0px 8px var(--white);
 }
 
 div.access_but {
@@ -146,7 +137,7 @@ div.access_but {
     right: 10px;
     height: 50px;
     width: 200px;
-    background-color: var(--green);
+    background-color: var(--white);
     bottom: 10px;
     border-radius: 20px;
     transition: box-shadow 0.5s;
@@ -154,7 +145,7 @@ div.access_but {
 }
 
 div.access_but:hover {
-    box-shadow: 0px 0px 10px var(--green);
+    box-shadow: 0px 0px 10px var(--white);
     cursor: pointer;
 }
 
@@ -177,23 +168,21 @@ div.access_but > p {
     padding-top: 10px;
 }
 
-@media (min-width: 1200px) {
-    
-    main {
-        width: 1200px;
-        background-color: var(--dark2);
-        box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
-        margin: auto;
-        padding-bottom: 1px;
-    }
-
+main {
+    width: 100%;
+    background-image: url("../src/imgs/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
+    margin: auto;
+    padding-bottom: 1px;
 }
 
 @media (min-width: 720px) and (max-width: 1199px) {
 
     main {
-        width: 100%;
-        background-color: var(--dark2);
         margin: auto;
         padding-bottom: 1px;
     }
@@ -203,14 +192,16 @@ div.access_but > p {
 @media (max-width: 719px) {
 
     main {
-        width: 100%;
-        background-color: var(--dark2);
         margin: auto;
         padding-bottom: 1px;
     }
 
     div#menu {
         display: block;
+    }
+
+    .overall {
+        width: 90%;
     }
 
     header > nav > ul {

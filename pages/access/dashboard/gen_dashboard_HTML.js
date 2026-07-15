@@ -17,14 +17,16 @@ export function genDashboardHTML(JSON) {
         </section>
         <section class = "overall" id = "isec_member">
             <h2 class = "dash-title">Information about the members</h2>
-            <div>
-                <p>The figure bellow illustrates the ammount of members inside the server for the past, present and near future as well. Negative numbers represent days in the past, so -5, for example, means 5 days ago, 0 means today and positive numbers represent days in the future (1 means tomorrow, for example)</p>
-                <p>The error of the prediction is ${JSON["member_prediction"]["ERROR"].toFixed(2)}%</p>
-                <canvas id = "imember_qtt" class = "std-dashboard"></canvas>
-            </div>
             <div class = "member-cont">
+                <div id = "cont_member_graph">
+                    <p>The figure bellow illustrates the ammount of members inside the server for the past, present and near future as well. Negative numbers represent days in the past, so -5, for example, means 5 days ago, 0 means today and positive numbers represent days in the future (1 means tomorrow, for example)</p>
+                    <p>The error of the prediction is ${JSON["member_prediction"]["ERROR"].toFixed(2)}%</p>
+                    <canvas id = "imember_qtt" class = "std-dashboard"></canvas>
+                </div>
                 <div id = "imember-graph">
-                    <p>The histogram bellow illustrates the probability distribuition of acquiring an ammount of new members tomorrow. Furthermore, the probability of obtaining ${JSON["new_member_probability"]["from"]} to ${JSON["new_member_probability"]["until"]} new members tomorrow is ${(JSON["new_member_probability"]["probability"] * 100).toFixed(2)}%</p>
+                    <p>The histogram bellow illustrates the probability distribuition of acquiring an ammount of new members tomorrow.</p>
+                    <p style = "padding-bottom: 4px;">The probability of obtaining ${JSON["new_member_probability"]["from"]} to ${JSON["new_member_probability"]["until"]} new members tomorrow is ${(JSON["new_member_probability"]["probability"] * 100).toFixed(2)}%</p>
+                    <p>( * ) The prediction was made based on Poisson distribution</p>
                     <canvas id = "iprob_new_members" class = "std-dashboard"></canvas>
                 </div>
                 <div>

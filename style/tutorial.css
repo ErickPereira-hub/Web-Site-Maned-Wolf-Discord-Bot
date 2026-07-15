@@ -1,13 +1,13 @@
 div.skull_logo {
     width: 50px;
     height: 50px;
-    background-color: var(--green);
+    background-color: var(--white);
     border-radius: 50%;
     background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/skull.png");
     background-position: center;
     background-size: 70% 70%;
     background-repeat: no-repeat;
-    box-shadow: 0px 0px 3px var(--green);
+    box-shadow: 0px 0px 3px var(--white);
 }
 
 div.how_to_container {
@@ -30,5 +30,5 @@ section.overall > p {
 }
 
 h2.edit_title {
-    color: var(--green)
+    color: var(--white)
 }

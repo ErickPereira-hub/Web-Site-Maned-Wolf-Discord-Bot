@@ -20,7 +20,7 @@ export function generateDashbord(JSON) {
         "COL7" : "rgba(255, 255, 255, 0.3)",
         "COL8" : "rgba(255, 255, 255, 0.8)",
         "COL9" : "rgba(167, 74, 74, 0.3)",
-        "COL10" : "rgb(123, 255, 0)"
+        "COL10" : "rgb(255, 255, 255)"
     } //<--- Palet of colors that will be used in the dashboard
 
     //Calling the charts over the injected HTML
@@ -38,6 +38,8 @@ export function generateDashbord(JSON) {
     //If the probabilites of obtaining new members is Zero for every volume (occurs when the server doesn't have new members for the last 7 days), we don't show the new members probability section.
     if (allZeros(getSubArray(JSON["new_member_probability"]["points"], 1))) {
         document.getElementById("imember-graph").style.display = "none"; //<--- Hide the section
+        document.getElementById("cont_member_graph").style.gridColumnStart = "1";
+        document.getElementById("cont_member_graph").style.gridColumnEnd = "3";
     } else {
         getPoissonForMembersDashboard(JSON, PALLET); //<--- Calls the graph with the Poisson distribution for new members tomorrow
     }
