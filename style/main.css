@@ -2,13 +2,14 @@
     --yellow: #eec679;
     --green: #60e06e;
     --dark_green: #6f966d;
-    --dark1: #40433b;
+    --dark1: #32352e;
     --dark2: #111511;
     --dark3: #000100;
     --dark4: #2f312c;
     --weak1: rgba(8, 255, 131, 0.05);
     --weak2: rgba(251, 255, 0, 0.05);
     --super_dark_green: #537453;
+    --dark_bg: #050a05;
 }
 
 * {
@@ -25,7 +26,7 @@ h1 {
 
 body {
     height: 100vh;
-    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/bg.png");
+    background-color: var(--dark_bg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -136,7 +137,6 @@ footer {
 }
 
 .overall:hover {
-    background-image: linear-gradient(45deg, var(--weak1), var(--weak2));
     box-shadow: 0px 0px 8px var(--green);
 }
 
