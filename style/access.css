@@ -109,6 +109,7 @@ p.error {
 }
 
 @media (max-width:1200px) {
+
     .member-cont {
         display : block;
     }
@@ -116,4 +117,5 @@ p.error {
     #ichannels-cont {
         display: block;
     }
+
 }
