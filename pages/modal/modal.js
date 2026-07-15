@@ -15,7 +15,6 @@ function openCloseModal(show, json_pos) {
 
         //Accessing the content that will be shown
         const title = JSON[json_pos].title;
-        const path = "../../src/imgs/examples/" + JSON[json_pos].img_name;
         const extra = "( * ) Obs.: this is a print from a real discord server."
 
         //Getting the elements
@@ -30,7 +29,7 @@ function openCloseModal(show, json_pos) {
         title_place.className = "title_in_modal";
         title_place.innerText = title;
         img_div.className = "img_in_modal";
-        img_div.style.backgroundImage = `url('${path}')`;
+        img_div.style.backgroundImage = `url('${JSON[json_pos].url}')`;
         extraP.style.padding = "20px";
         extraP.style.textAlign = "center";
         extraP.innerText = extra;
