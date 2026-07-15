@@ -27,7 +27,7 @@ export function getMostActiveMembersDashboard(JSON, pallet) {
         },
         options : {
             title : stdTitle(`Top ${mostActiveMembersJSON.length} members in the server`),
-            legend: stdLegend(15)
+            legend: {display : false}
         }
     }) //<---Drawing the pie chart in canvas.
 }

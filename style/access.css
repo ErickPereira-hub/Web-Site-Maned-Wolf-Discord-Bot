@@ -77,20 +77,6 @@ p.error {
     margin-bottom: 20px;
 }
 
-.show-important-data {
-    width: 90%;
-    margin: auto;
-    height: 35px;
-    border-radius : 10px;
-    margin-bottom: 10px;
-    transition: width 1.0s, height 1.0s;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 20px;
-    background-color: var(--super_dark_green);
-    transition: font-size 0.5s;
-}
-
 .show-important-data:hover {
     font-size: 1.3em;
 }
@@ -105,8 +91,29 @@ p.error {
     grid-column-end : 3;
 }
 
+#icont-imp-info {
+    font-size: 1.0em;
+}
+
+#icont-imp-info > p {
+    padding: 10px;
+}
+
+#icont-imp-info > p::before {
+    content: "📌";
+}
+
+#ichannels-cont {
+    display : grid;
+    grid-template-columns: 50% 50%;
+}
+
 @media (max-width:1200px) {
     .member-cont {
         display : block;
+    }
+
+    #ichannels-cont {
+        display: block;
     }
 }

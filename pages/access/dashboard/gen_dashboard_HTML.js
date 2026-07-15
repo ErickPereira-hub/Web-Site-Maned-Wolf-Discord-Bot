@@ -3,10 +3,16 @@ export function genDashboardHTML(JSON) {
     main.innerHTML += `
         <section class = "overall" id = "isec_channel">
             <h2 class = "dash-title">Information about the channels</h2>
-            <p>The pie chart bellow illustrates the most active channels in the server. It is based on the total number of messages sent in each channel since the integration of the server with the bot.</p>
-            <canvas id = "imost_act_ch" class = "std-dashboard"></canvas>
-            <p>The pie chart bellow shows the distribution of NSFW and non-NSFW channels in the server.</p>
-            <canvas id = "insfw" class = "std-dashboard"></canvas>
+            <div id = "ichannels-cont">
+                <div>
+                    <p>The pie chart bellow illustrates the most active channels in the server. It is based on the total number of messages sent in each channel since the integration of the server with the bot.</p>
+                    <canvas id = "imost_act_ch" class = "std-dashboard"></canvas>
+                </div>    
+                <div>
+                    <p>The pie chart bellow shows the distribution of NSFW and non-NSFW channels in the server.</p>
+                    <canvas id = "insfw" class = "std-dashboard"></canvas>
+                </div>
+            </div>
         </section>
         <section class = "overall" id = "isec_member">
             <h2 class = "dash-title">Information about the members</h2>
@@ -23,11 +29,11 @@ export function genDashboardHTML(JSON) {
                 <div>
                     <canvas id = "imost_act_members" class = "std-dashboard"></canvas>
                 </div>
-                <div>
-                    <div class = "show-important-data">Average number of members is ${JSON["members_qtt"]["overall_tot_avg"].toFixed(1)}</div>
-                    <div class = "show-important-data">Standard deviation for the number of members is ${JSON["members_qtt"]["overall_tot_std_dev"].toFixed(3)}</div>
-                    <div class = "show-important-data">Average variation of members is ${JSON["members_qtt"]["overall_var_avg"].toFixed(2)}</div>
-                    <div class = "show-important-data">Standard deviation for variation of members is ${JSON["members_qtt"]["overall_var_std_dev"].toFixed(1)}</div>
+                <div id = "icont-imp-info">
+                    <p>Average number of members is ${JSON["members_qtt"]["overall_tot_avg"].toFixed(1)}</p>
+                    <p>Standard deviation for the number of members is ${JSON["members_qtt"]["overall_tot_std_dev"].toFixed(3)}</p>
+                    <p>Average variation of members is ${JSON["members_qtt"]["overall_var_avg"].toFixed(2)}</p>
+                    <p>Standard deviation for variation of members is ${JSON["members_qtt"]["overall_var_std_dev"].toFixed(1)}</p>
                 </div>
             </div>
         </section>

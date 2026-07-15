@@ -23,7 +23,7 @@ export const stdHistStyle = (title, pallet, has_legend, xMin, xMax) => {
                     },
                     ticks : {
                         fontColor : pallet["COL8"],
-                        fontSize : 25,
+                        fontSize : 15,
                         min : xMin,
                         max : xMax
                     }
@@ -37,7 +37,7 @@ export const stdHistStyle = (title, pallet, has_legend, xMin, xMax) => {
                     },
                     ticks : {
                         fontColor : pallet["COL8"],
-                        fontSize : 25,
+                        fontSize : 15,
                     }
                 }
             ]
@@ -55,7 +55,7 @@ export const stdxAxisStyle = (pallet) =>
             },
             ticks : {
                 fontColor : pallet["COL8"],
-                fontSize : 25
+                fontSize : 15
             }
         }
     ]

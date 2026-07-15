@@ -80,7 +80,7 @@ export function getMembersDashboard(JSON, pallet) {
                         },
                         ticks : {
                             fontColor : pallet["COL8"],
-                            fontSize : 25,
+                            fontSize : 15,
                             min : Math.min(...comparativeArray) - EXTREME_DIST >= 0 ? Math.min(...comparativeArray) - EXTREME_DIST : 0,
                             max : Math.max(...comparativeArray) + EXTREME_DIST
                         }
