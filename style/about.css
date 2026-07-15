@@ -1,7 +1,7 @@
 div#iphoto {
     width: 150px;
     height: 150px;
-    background-image: url("../../src/imgs/mw_photo.png");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/mw_photo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -3,7 +3,7 @@ div.skull_logo {
     height: 50px;
     background-color: var(--green);
     border-radius: 50%;
-    background-image: url("../../src/imgs/skull.png");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/skull.png");
     background-position: center;
     background-size: 70% 70%;
     background-repeat: no-repeat;

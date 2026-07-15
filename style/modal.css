@@ -18,7 +18,7 @@ section.modal > div.x {
     right: 15px;
     width: 40px;
     height: 40px;
-    background-image: url("../../src/imgs/close.png");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/close.png");
     background-position: center;
     background-size: 100% 100%;
 }
