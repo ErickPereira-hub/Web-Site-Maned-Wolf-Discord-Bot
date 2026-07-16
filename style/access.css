@@ -115,13 +115,13 @@ p.error {
 }
 
 #iimg_serverid {
-    background-image: url("../src/imgs/key.png");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/user.png");
     left: 10px;
     top: 163px;
 }
 
 #iimg_token {
-    background-image: url("../src/imgs/user.png");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/key.png");
     left: 10px;
     top: 43px;
 }
