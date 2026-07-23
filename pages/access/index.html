@@ -62,7 +62,7 @@
     </footer>
     <!--Modal for messages-->
     <section class = "modal" id = "imodal_msg">
-        <div class = "x" onclick = "openCloseModalProbabilityMsg(false)"></div>
+        <div class = "x" onclick = "openCloseModalProbability(false, 'message')"></div>
         <h2 class = "title_in_modal">Probability of new messages</h2>
         <hr>
         <form id = "imsg_prob_form">
@@ -71,13 +71,13 @@
             <br>
             <label class = "calculus_label" for = "iend">Ending quantity:</label>
             <input id = "iend" type = "text" required>
-            <input type = "submit" id = "iget_msg_probability" value = "GET">
+            <input type = "submit" class = "but_get_probability_style" value = "GET">
             <p class = "error" id = "imsg_prob_error"></p>
         </form>
     </section>
     <!--Modal for members-->
     <section class = "modal" id = "imodal_member">
-        <div class = "x" onclick = "openCloseModalProbabilityMember(false)"></div>
+        <div class = "x" onclick = "openCloseModalProbability(false, 'member')"></div>
         <h2 class = "title_in_modal">Probability of new members</h2>
         <hr>
         <form id = "imember_prob_form">
@@ -86,12 +86,11 @@
             <br>
             <label class = "calculus_label" for = "iend_member">Ending ammount:</label>
             <input id = "iend_member" type = "text" required>
-            <input type = "submit" id = "iget_member_probability" value = "GET">
+            <input type = "submit" class = "but_get_probability_style" value = "GET">
             <p class = "error" id = "imember_prob_error"></p>
         </form>
     </section>
-    <script src = "../modal/modal_prob_msg.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src = "../general_interaction/menu.js"></script>
     <script src = "../general_interaction/page_cnx.js"></script>
     <script src = "./request_listener_access.js" type = "module"></script>
@@ -99,6 +98,6 @@
     <script src = "./dashboard/mocked_dashboard_event.js" type = "module"></script>
     <script src = "./request_listener_prob_msg.js" type = "module"></script>
     <script src = "./request_listener_prob_member.js" type = "module"></script>
-    <script src = "../modal/modal_prob_member.js"></script>
+    <script src = "../modal/modal_prob.js"></script>
 </body>
 </html>

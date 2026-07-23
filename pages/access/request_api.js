@@ -36,13 +36,16 @@ export function pushAccessDataFromApi(serverId, token) {
     }).catch(err => console.log(err));
 }
 
-export function pushMessagesProbabilityFromApi(from, until) {
+export function pushProbabilityFromApi(from, until, baseUrl, type) {
 
     let status = null;
-    const URL = `http://localhost:3000/msg/poisson_for_web?from=${from}&until=${until}`;
-    const errorHtmlMsg = document.querySelectorAll("section#imodal_msg p.error")[0];
-    const modal = document.getElementById("imodal_msg");
-    const infoContainer = document.getElementById("idiv_with_prob");
+    
+    //Grabbing the HTML nodes from the DOM.
+    const URL = baseUrl + `?from=${from}&until=${until}`;
+    const errorHtml = type === "member" ? document.getElementById("imember_prob_error") : document.querySelectorAll("section#imodal_msg p.error")[0];
+    const modal = document.getElementById(type === "member" ? "imodal_member" : "imodal_msg");
+    const infoContainer = document.getElementById(type === "member" ? "idiv_with_member_prob" : "idiv_with_prob");
+
     if (infoContainer !== null) {
         modal.removeChild(infoContainer); //<--- Deleting the information if it already exists.
     }
@@ -63,46 +66,10 @@ export function pushMessagesProbabilityFromApi(from, until) {
                 window.href = "./index.html";
             }
 
-            errorHtmlMsg.innerText = "❌" + JSON["message"];
+            errorHtml.innerText = "❌" + JSON["message"];
         } else {
-            errorHtmlMsg.innerText = "";
-            buildMessageMemberProbabilityInfo(JSON, modal, "messages", "idiv_with_prob");
-        }
-    }
-    )
-}
-
-export function pushMembersProbabilityFromApi(from, until) {
-
-    let status = null;
-    const URL = `http://localhost:3000/member/poisson_for_web?from=${from}&until=${until}`;
-    const errorHtmlMsg = document.getElementById("imember_prob_error");
-    const modalMember = document.getElementById("imodal_member");
-    const memberInfoContainer = document.getElementById("idiv_with_member_prob");
-    if (memberInfoContainer !== null) {
-        modal.removeChild(memberInfoContainer); //<--- Deleting the information if it already exists.
-    }
-
-    fetch(URL, {
-        "credentials" : "include", //<--- Important because we are going to send and receive a cookie
-        "method" : "get"
-        }
-    ).then(response => {
-        status = response.status;
-        return response.json();
-        }
-    ).then(JSON =>{
-        
-        if (status !== 200) {
-
-            if (status === 401) {
-                window.href = "./index.html";
-            }
-
-            errorHtmlMsg.innerText = "❌" + JSON["message"];
-        } else {
-            errorHtmlMsg.innerText = "";
-            buildMessageMemberProbabilityInfo(JSON, modalMember, "members", "idiv_with_member_prob"); //Constructing the probability information on the frontend
+            errorHtml.innerText = "";
+            buildMessageMemberProbabilityInfo(JSON, modal, type === "member" ? "members" : "messages", type === "member" ? "idiv_with_member_prob" : "idiv_with_prob"); //Constructing the probability information on the frontend
         }
     }
     )
