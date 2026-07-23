@@ -1,6 +1,6 @@
 import {infoJSON as JSON} from "../../src/info/infoJSON.js";
 
-function openCloseModal(show, json_pos) {
+function openCloseModalTutorial(show, json_pos) {
     const modal = document.getElementById("imodal");
     const main = document.getElementsByTagName("main")[0];
     const header = document.getElementsByTagName("header")[0];
@@ -54,4 +54,4 @@ function openCloseModal(show, json_pos) {
     modal.removeChild(document.getElementById("iextra"));
 }
 
-window.openCloseModal = openCloseModal;
+window.openCloseModalTutorial = openCloseModalTutorial;

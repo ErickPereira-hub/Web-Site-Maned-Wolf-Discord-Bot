@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "../../style/main.css" rel = "stylesheet">
     <link href = "../../style/access.css" rel = "stylesheet">
+    <link href = "../../style/modal.css" rel = "stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -32,7 +33,7 @@
     </header>
     <main>
         <section class = "overall extra_bottom_space">
-            <form>
+            <form> 
                 <label for = "isid">Server Id</label>
                 <br>
                 <div class = "form_img" id = "iimg_serverid">
@@ -59,11 +60,27 @@
     <footer>
         If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>
     </footer>
+    <section class = "modal" id = "imodal_msg">
+        <div class = "x" onclick = "openCloseModalProbabilityMsg(false)"></div>
+        <h2 class = "title_in_modal">Probability of new messages</h2>
+        <hr>
+        <form id = "imsg_prob_form">
+            <label class = "calculus_label" for = "istart">Starting quantity:</label>
+            <input id = "istart" type = "text" required>
+            <br>
+            <label class = "calculus_label" for = "iend">Ending quantity:</label>
+            <input id = "iend" type = "text" required>
+            <input type = "submit" id = "iget_msg_probability" value = "GET">
+            <p class = "error" id = ""></p>
+        </form>
+    </section>
+    <script src = "../modal/modal_prob_msg.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src = "../general_interaction/menu.js"></script>
     <script src = "../general_interaction/page_cnx.js"></script>
-    <script src = "./request_listener.js" type = "module"></script>
+    <script src = "./request_listener_access.js" type = "module"></script>
     <script src = "./dashboard/generate_dashboard.js" type = "module"></script>
     <script src = "./dashboard/mocked_dashboard_event.js" type = "module"></script>
+    <script src = "./request_listener_prob_msg.js" type = "module"></script>
 </body>
 </html>

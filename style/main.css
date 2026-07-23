@@ -4,6 +4,10 @@
     --gray: #bdbdbd;
     --dark1: #000100;
     --dark2: #1a1a1a;
+    --dark3: rgb(12, 12, 12);
+    --dark1_but: #4e4e4ebb;
+    --dark2_but: #5e5e5ebb;
+    --dark_shadow: rgba(255, 255, 255, 0.432);
     --transparent_dark: rgba(0, 0, 0, 0.7);
 }
 
@@ -178,6 +182,14 @@ main {
     box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
     margin: auto;
     padding-bottom: 1px;
+}
+
+hr {
+    width: 80%;
+    border: none;
+    height: 2px;
+    margin: auto;
+    background-color: gray;
 }
 
 @media (min-width: 720px) and (max-width: 1199px) {

@@ -44,6 +44,17 @@ export function genDashboardHTML(JSON) {
             <h2 class = "dash-title">Information about the messages</h2>
             <p id = "itxt_msg_poisson"></p>
             <canvas id = "inew_msg_dist" class = "std-dashboard"></canvas>
+            <p class = "aside_msg">You can access the content of deleted and updated messages. This information is sensitive and may include important auditory data. Please, ensure that auditory content is kept strictly confidential and never shared with anyone. The downloaded file will be in csv format. You can open it with any text editor or work with it throughout Excel or Google Sheets.</p>     
+            <div id = "download_cont">
+                <a class = "download" href = 'http://localhost:3000/download/audit_msg?audit_type=delete'>Download Deletions</a>
+                <a class = "download" href = 'http://localhost:3000/download/audit_msg?audit_type=update'>Download Updates</a> 
+            </div>
+            <p style = "margin-bottom: 40px;">if you want to have the probability of gaining a specific number of messages tomorrow or a specific range of messages tomorrow, click at the bottom bellow</p>
+            <div class = "access_but" id = "imock-data" style = "width: 240px;" onclick = "openCloseModalProbabilityMsg(true)">
+                <p style = "margin-left: 5px;">PROBABILITY</p>
+                <div class = "arrow_logo">
+                </div>
+            </div>
         </section>
     ` //<--- This HTML code must be called when the DOM has been started.
 }

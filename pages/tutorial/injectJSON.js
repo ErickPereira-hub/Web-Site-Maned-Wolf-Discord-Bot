@@ -16,7 +16,7 @@ export default function injectJSON() {
                 <p>
                     ${infoJSON[i]["command"]}: ${infoJSON[i]["desc"]}
                 </p>
-                <div onclick = "openCloseModal(true, ${i})" class = "access_but">
+                <div onclick = "openCloseModalTutorial(true, ${i})" class = "access_but">
                     <p>EXAMPLE</p>
                     <div class = "arrow_logo">
                     </div>
