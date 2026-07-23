@@ -63,7 +63,7 @@ export function pushProbabilityFromApi(from, until, baseUrl, type) {
         if (status !== 200) {
 
             if (status === 401) {
-                window.href = "./index.html";
+                window.href = "./access.html";
             }
 
             errorHtml.innerText = "❌" + JSON["message"];
