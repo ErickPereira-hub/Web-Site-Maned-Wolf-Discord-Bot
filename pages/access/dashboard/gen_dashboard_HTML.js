@@ -52,7 +52,7 @@ export function genDashboardHTML(JSON) {
             <p style = "margin-bottom: 40px;">if you want to have the probability of gaining a specific number of messages tomorrow or a specific range of messages tomorrow, click at the bottom bellow</p>
             <div class = "access_but" id = "imock-data" style = "width: 240px;" onclick = "openCloseModalProbabilityMsg(true)">
                 <p style = "margin-left: 5px;">PROBABILITY</p>
-                <div class = "arrow_logo">
+                <div class = "dice_logo">
                 </div>
             </div>
         </section>

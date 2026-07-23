@@ -147,6 +147,18 @@ p.error {
     margin-bottom: 20px;
 }
 
+div.dice_logo {
+    background-image: url("../src/imgs/dice.png");
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 @media (max-width:1200px) {
 
     .member-cont {
