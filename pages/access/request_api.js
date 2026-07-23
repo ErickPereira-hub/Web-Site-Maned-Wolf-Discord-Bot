@@ -1,5 +1,5 @@
 import { generateDashbord } from "./dashboard/generate_dashboard.js";
-import { buildMessageProbabilityInfo } from "./build_probability_info.js";
+import { buildMessageMemberProbabilityInfo } from "./build_probability_info.js";
 
 export function pushAccessDataFromApi(serverId, token) {
 
@@ -66,7 +66,43 @@ export function pushMessagesProbabilityFromApi(from, until) {
             errorHtmlMsg.innerText = "❌" + JSON["message"];
         } else {
             errorHtmlMsg.innerText = "";
-            buildMessageProbabilityInfo(JSON, modal) //Constructing the probability information on the frontend
+            buildMessageMemberProbabilityInfo(JSON, modal, "messages", "idiv_with_prob");
+        }
+    }
+    )
+}
+
+export function pushMembersProbabilityFromApi(from, until) {
+
+    let status = null;
+    const URL = `http://localhost:3000/member/poisson_for_web?from=${from}&until=${until}`;
+    const errorHtmlMsg = document.getElementById("imember_prob_error");
+    const modalMember = document.getElementById("imodal_member");
+    const memberInfoContainer = document.getElementById("idiv_with_member_prob");
+    if (memberInfoContainer !== null) {
+        modal.removeChild(memberInfoContainer); //<--- Deleting the information if it already exists.
+    }
+
+    fetch(URL, {
+        "credentials" : "include", //<--- Important because we are going to send and receive a cookie
+        "method" : "get"
+        }
+    ).then(response => {
+        status = response.status;
+        return response.json();
+        }
+    ).then(JSON =>{
+        
+        if (status !== 200) {
+
+            if (status === 401) {
+                window.href = "./index.html";
+            }
+
+            errorHtmlMsg.innerText = "❌" + JSON["message"];
+        } else {
+            errorHtmlMsg.innerText = "";
+            buildMessageMemberProbabilityInfo(JSON, modalMember, "members", "idiv_with_member_prob"); //Constructing the probability information on the frontend
         }
     }
     )

@@ -60,6 +60,7 @@
     <footer>
         If you want to learn more about the project, access my <a target = "_blank" style = "text-decoration: none; color: white;" href = "https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT">Github</a>
     </footer>
+    <!--Modal for messages-->
     <section class = "modal" id = "imodal_msg">
         <div class = "x" onclick = "openCloseModalProbabilityMsg(false)"></div>
         <h2 class = "title_in_modal">Probability of new messages</h2>
@@ -71,7 +72,22 @@
             <label class = "calculus_label" for = "iend">Ending quantity:</label>
             <input id = "iend" type = "text" required>
             <input type = "submit" id = "iget_msg_probability" value = "GET">
-            <p class = "error" id = ""></p>
+            <p class = "error" id = "imsg_prob_error"></p>
+        </form>
+    </section>
+    <!--Modal for members-->
+    <section class = "modal" id = "imodal_member">
+        <div class = "x" onclick = "openCloseModalProbabilityMember(false)"></div>
+        <h2 class = "title_in_modal">Probability of new members</h2>
+        <hr>
+        <form id = "imember_prob_form">
+            <label class = "calculus_label" for = "istart_member">Starting ammount:</label>
+            <input id = "istart_member" type = "text" required>
+            <br>
+            <label class = "calculus_label" for = "iend_member">Ending ammount:</label>
+            <input id = "iend_member" type = "text" required>
+            <input type = "submit" id = "iget_member_probability" value = "GET">
+            <p class = "error" id = "imember_prob_error"></p>
         </form>
     </section>
     <script src = "../modal/modal_prob_msg.js"></script>
@@ -82,5 +98,7 @@
     <script src = "./dashboard/generate_dashboard.js" type = "module"></script>
     <script src = "./dashboard/mocked_dashboard_event.js" type = "module"></script>
     <script src = "./request_listener_prob_msg.js" type = "module"></script>
+    <script src = "./request_listener_prob_member.js" type = "module"></script>
+    <script src = "../modal/modal_prob_member.js"></script>
 </body>
 </html>

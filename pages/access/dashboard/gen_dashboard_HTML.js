@@ -39,6 +39,11 @@ export function genDashboardHTML(JSON) {
                     <p>Standard deviation for variation of members is ${JSON["members_qtt"]["overall_var_std_dev"].toFixed(1)}</p>
                 </div>
             </div>
+            <div class = "access_but" style = "width: 240px;" onclick = "openCloseModalProbabilityMember(true)">
+                <p style = "margin-left: 5px;">PROBABILITY</p>
+                <div class = "dice_logo">
+                </div>
+            </div>
         </section>
         <section class = "overall" id = "isec_msg">
             <h2 class = "dash-title">Information about the messages</h2>
@@ -50,7 +55,7 @@ export function genDashboardHTML(JSON) {
                 <a class = "download" href = 'http://localhost:3000/download/audit_msg?audit_type=update'>Download Updates</a> 
             </div>
             <p style = "margin-bottom: 40px;">if you want to have the probability of gaining a specific number of messages tomorrow or a specific range of messages tomorrow, click at the bottom bellow</p>
-            <div class = "access_but" id = "imock-data" style = "width: 240px;" onclick = "openCloseModalProbabilityMsg(true)">
+            <div class = "access_but" style = "width: 240px;" onclick = "openCloseModalProbabilityMsg(true)">
                 <p style = "margin-left: 5px;">PROBABILITY</p>
                 <div class = "dice_logo">
                 </div>

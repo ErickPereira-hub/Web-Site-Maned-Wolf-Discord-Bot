@@ -7,4 +7,5 @@ formHTML.addEventListener("submit", evt => {
     const from = Number(document.getElementById("istart").value);
     const until = Number(document.getElementById("iend").value);
     pushMessagesProbabilityFromApi(from, until);
-});
+    }
+);
