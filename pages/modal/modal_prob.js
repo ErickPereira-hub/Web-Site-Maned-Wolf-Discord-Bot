@@ -31,6 +31,7 @@ function openCloseModalProbability(show, type) {
     footer.inert = false;
     main.style.filter = "blur(0px)";
     header.style.filter = "blur(0px)";
+    footer.style.filter = "blur(0px)";
     
     //Cleaning stuff inside the modal
     msgErrorText.innerText = "";
