@@ -4,6 +4,7 @@ export default function injectJSON() {
     const mainHTML = document.getElementsByTagName("main")[0]
     for (let i = 0; i <= infoJSON.length; i++) {
         mainHTML.innerHTML += `
+            <hr class = "tutorial_line">
             <section class = "overall extra_bottom_space adjust_sides">
                 <div class = "how_to_container">
                     <div class = "skull_logo"></div>
@@ -22,7 +23,6 @@ export default function injectJSON() {
                     </div>
                 </div>
             </section>
-            <hr class = "tutorial_line">
         `
     }
 }
