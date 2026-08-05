@@ -1,5 +1,6 @@
 export function genDashboardHTML(JSON) {
     const main = document.getElementsByTagName("main")[0];
+    main.style.marginBottom = "10px";
     main.innerHTML += `
         <hr>
         <section class = "overall" id = "isec_channel">

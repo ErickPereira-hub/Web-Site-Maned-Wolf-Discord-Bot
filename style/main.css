@@ -196,6 +196,9 @@ section.overall {
     main {
         margin: auto;
         padding-bottom: 1px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-bottom: 10px;
     }
 
     div.adjust_but_position {
@@ -215,7 +218,7 @@ section.overall {
         border-width: 2px;
         box-shadow: 0px 0px 0px var(--white);
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 0px !important;
     }
 
     div.adjust_but_position {
