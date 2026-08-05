@@ -3,7 +3,7 @@ export const stdHistStyle = (title, pallet, has_legend, xMin, xMax) => {
         legend : {
             display : has_legend,
             labels : {
-                fontColor : "#ffffff",
+                fontColor : "#e4e4e4",
                 fontSize : 20,
                 text : "x"
             }
@@ -12,7 +12,7 @@ export const stdHistStyle = (title, pallet, has_legend, xMin, xMax) => {
             display : true,
             text : title,
             fontSize : 20,
-            fontColor : "#ffffff"
+            fontColor : "#e4e4e4"
         },
         scales : {
             xAxes : [
@@ -66,14 +66,14 @@ export const stdTitle = title => {
         display : true,
         text : title,
         fontSize : 20,
-        fontColor : "#ffffff"
+        fontColor : "#e4e4e4"
     }
 }
 
 export const stdLegend = size => {
     return {
         labels : {
-            fontColor : "#ffffff",
+            fontColor : "#e4e4e4",
             fontSize : 20
         }
     }

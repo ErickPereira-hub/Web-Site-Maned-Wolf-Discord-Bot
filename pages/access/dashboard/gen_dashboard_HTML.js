@@ -1,6 +1,7 @@
 export function genDashboardHTML(JSON) {
     const main = document.getElementsByTagName("main")[0];
     main.style.marginBottom = "10px";
+    main.style.paddingBottom = "100px";
     main.innerHTML += `
         <hr>
         <section class = "overall" id = "isec_channel">
@@ -62,6 +63,11 @@ export function genDashboardHTML(JSON) {
             <div class = "access_but" style = "width: 240px; bottom: -40px; right: 20px;" onclick = "openCloseModalProbability(true,'message')">
                 <p style = "margin-left: 5px;">PROBABILITY</p>
                 <div class = "dice_logo">
+                </div>
+            </div>
+            <div class = "access_but" style = "width: 240px; bottom: -120px; right: 20px;" onclick = "deleteCookie()">
+                <p style = "margin-left: 5px;"> LOGOUT</p>
+                <div class = "logout_logo">
                 </div>
             </div>
         </section>

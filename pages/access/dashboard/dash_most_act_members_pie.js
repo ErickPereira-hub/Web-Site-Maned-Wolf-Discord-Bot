@@ -13,20 +13,20 @@ export function getMostActiveMembersDashboard(JSON, pallet) {
         labels.push(label);
         activity.push(objMember[label]);
     });
-
     new Chart("imost_act_members", {
         type : "pie",
         data : {
-            labels: labels,
+            labels: (labels.length !== 0) ? labels : ["no user"],
             datasets: [
                 {
-                    data: activity,
-                    backgroundColor : colors
+                    data: (activity.length !== 0) ? activity : [1],
+                    backgroundColor : colors,
+                    borderWidth: 0
                 }
             ]
         },
         options : {
-            title : stdTitle(`Top ${mostActiveMembersJSON.length} members in the server`),
+            title : stdTitle((activity.length !== 0) ? `Top ${mostActiveMembersJSON.length} members in the server` : "There is no active user"),
             legend: {display : false}
         }
     }) //<---Drawing the pie chart in canvas.

@@ -35,7 +35,8 @@ export function getChannelsDashboard(JSON, pallet) {
             datasets: [
                 {
                     data: [JSON["is_nsfw"]["yes"], JSON["is_nsfw"]["no"]],
-                    backgroundColor : [pallet["COL1"], pallet["COL2"]]
+                    backgroundColor : [pallet["COL1"], pallet["COL2"]],
+                    borderWidth: 0
                 }
             ]
         },

@@ -19,8 +19,7 @@ export function generateDashbord(JSON) {
         "COL6" : "rgba(117, 144, 218, 0.8)",
         "COL7" : "rgba(255, 255, 255, 0.3)",
         "COL8" : "rgba(255, 255, 255, 0.8)",
-        "COL9" : "rgba(167, 74, 74, 0.8)",
-        "COL10" : "rgb(255, 255, 255)"
+        "COL9" : "rgba(167, 74, 74, 0.8)"
     } //<--- Palet of colors that will be used in the dashboard
 
     //Calling the charts over the injected HTML

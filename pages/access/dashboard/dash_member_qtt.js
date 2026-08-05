@@ -51,8 +51,7 @@ export function getMembersDashboard(JSON, pallet) {
                     label : "future",
                     data : arrayPredictions,
                     backgroundColor: pallet["COL6"],
-                    borderColor: pallet["COL10"],
-                    pointRadius : 5,
+                    pointRadius : 1,
                     fill : true,
                     lineTension : 0
                 },
@@ -60,8 +59,7 @@ export function getMembersDashboard(JSON, pallet) {
                     label : "past",
                     data: membersQtt,
                     backgroundColor : pallet["COL9"],
-                    borderColor: pallet["COL10"],
-                    pointRadius : 5,
+                    pointRadius : 1,
                     fill : true,
                     lineTension : 0,
                 }
