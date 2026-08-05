@@ -26,7 +26,7 @@ h1 {
 body {
     height: 100vh;
     color: var(--white);
-    background-image: url("../src/background.jpg");
+    background-image: url("https://raw.githubusercontent.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/refs/heads/main/src/imgs/background.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
