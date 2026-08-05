@@ -4,7 +4,7 @@ export default function injectJSON() {
     const mainHTML = document.getElementsByTagName("main")[0]
     for (let i = 0; i <= infoJSON.length; i++) {
         mainHTML.innerHTML += `
-            <section class = "overall extra_bottom_space">
+            <section class = "overall extra_bottom_space adjust_sides">
                 <div class = "how_to_container">
                     <div class = "skull_logo"></div>
                     <div class = "how_to">
@@ -16,12 +16,13 @@ export default function injectJSON() {
                 <p>
                     ${infoJSON[i]["command"]}: ${infoJSON[i]["desc"]}
                 </p>
-                <div onclick = "openCloseModalTutorial(true, ${i})" class = "access_but">
+                <div onclick = "openCloseModalTutorial(true, ${i})" class = "access_but adjust_but_position">
                     <p>EXAMPLE</p>
                     <div class = "arrow_logo">
                     </div>
                 </div>
             </section>
+            <hr>
         `
     }
 }

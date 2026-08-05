@@ -1,6 +1,7 @@
 export function genDashboardHTML(JSON) {
     const main = document.getElementsByTagName("main")[0];
     main.innerHTML += `
+        <hr>
         <section class = "overall" id = "isec_channel">
             <h2 class = "dash-title">Information about the channels</h2>
             <div id = "ichannels-cont">
@@ -15,6 +16,7 @@ export function genDashboardHTML(JSON) {
                 </div>
             </div>
         </section>
+        <hr>
         <section class = "overall" id = "isec_member">
             <h2 class = "dash-title">Information about the members</h2>
             <div class = "member-cont">
@@ -39,12 +41,13 @@ export function genDashboardHTML(JSON) {
                     <p>Standard deviation for variation of members is ${JSON["members_qtt"]["overall_var_std_dev"].toFixed(1)}</p>
                 </div>
             </div>
-            <div class = "access_but" style = "width: 240px;" onclick = "openCloseModalProbability(true,'member')">
+            <div class = "access_but" style = "width: 240px; bottom: -50px; right: 20px;" onclick = "openCloseModalProbability(true,'member')">
                 <p style = "margin-left: 5px;">PROBABILITY</p>
                 <div class = "dice_logo">
                 </div>
             </div>
         </section>
+        <hr>
         <section class = "overall" id = "isec_msg">
             <h2 class = "dash-title">Information about the messages</h2>
             <p id = "itxt_msg_poisson"></p>
@@ -55,7 +58,7 @@ export function genDashboardHTML(JSON) {
                 <a class = "download" href = 'http://localhost:3000/download/audit_msg?audit_type=update'>Download Updates</a> 
             </div>
             <p style = "margin-bottom: 40px;">if you want to have the probability of gaining a specific number of messages tomorrow or a specific range of messages tomorrow, click at the bottom bellow</p>
-            <div class = "access_but" style = "width: 240px;" onclick = "openCloseModalProbability(true,'message')">
+            <div class = "access_but" style = "width: 240px; bottom: -40px; right: 20px;" onclick = "openCloseModalProbability(true,'message')">
                 <p style = "margin-left: 5px;">PROBABILITY</p>
                 <div class = "dice_logo">
                 </div>

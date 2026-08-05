@@ -31,7 +31,7 @@ input[type = "text"]:focus {
 
 main {
     padding-top: 30px;
-    min-height: 900px;
+    margin-bottom: 300px;
 }
 
 label {
@@ -78,6 +78,10 @@ p.error {
     margin-bottom: 20px;
 }
 
+#insfw {
+    margin-top: -20px;
+}
+
 .show-important-data:hover {
     font-size: 1.3em;
 }
@@ -86,7 +90,7 @@ p.error {
     display : grid;
     grid-template-columns: 50% 50%;
     gap : 15px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 #icont-imp-info {
@@ -179,7 +183,7 @@ div.dice_logo {
     }
 
     #download_cont {
-        width: 350px;
+        margin: auto;
     }
 
 }

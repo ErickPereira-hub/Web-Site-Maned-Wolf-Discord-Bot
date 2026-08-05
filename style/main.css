@@ -1,6 +1,6 @@
 :root {
     --yellow: #eec679;
-    --white: #ffffff;
+    --white: #e4e4e4;
     --gray: #bdbdbd;
     --dark1: #000100;
     --dark2: #1a1a1a;
@@ -26,6 +26,11 @@ h1 {
 body {
     height: 100vh;
     color: var(--white);
+    background-image: url("../src/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 div#logo_cont {
@@ -111,28 +116,8 @@ footer {
     padding: 20px;
 }
 
-.overall {
-    width: 70%;
-    padding: 20px;
-    background-color: var(--transparent_dark);
-    backdrop-filter: blur(5px);
-    border-radius: 8px;
-    border-color: var(--white);
-    border-style: solid;
-    border-width: 2px;
-    margin: auto;
-    box-shadow: 0px 0px 3px var(--white);
-    position: relative;
-    transition: box-shadow 0.5s;
-    margin-bottom: 50px;
-}
-
 .extra_bottom_space {
     padding-bottom: 80px;
-}
-
-.overall:hover {
-    box-shadow: 0px 0px 8px var(--white);
 }
 
 div.access_but {
@@ -141,10 +126,14 @@ div.access_but {
     height: 50px;
     width: 200px;
     background-color: var(--white);
-    bottom: 10px;
+    bottom: 0px;
     border-radius: 20px;
     transition: box-shadow 0.5s;
     color: black;
+}
+
+div.adjust_but_position {
+    right: 130px !important;
 }
 
 div.access_but:hover {
@@ -172,23 +161,34 @@ div.access_but > p {
 }
 
 main {
-    width: 100%;
-    background-image: url("https://github.com/ErickPereira-hub/Web-Site-Maned-Wolf-Discord-Bot/blob/main/src/imgs/bg.jpg?raw=true");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.664);
+    width: 70%;
+    padding: 20px;
+    background-color: var(--transparent_dark);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    border-color: var(--white);
+    border-style: solid;
+    border-width: 2px;
     margin: auto;
-    padding-bottom: 1px;
+    box-shadow: 0px 0px 3px var(--white);
+    position: relative;
+    transition: box-shadow 0.5s;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 hr {
-    width: 80%;
+    width: 95%;
     border: none;
     height: 2px;
     margin: auto;
     background-color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section.overall {
+    position: relative;
 }
 
 @media (min-width: 720px) and (max-width: 1199px) {
@@ -198,13 +198,28 @@ hr {
         padding-bottom: 1px;
     }
 
+    div.adjust_but_position {
+        right: 0px !important;
+    }
+
 }
 
 @media (max-width: 719px) {
 
     main {
-        margin: auto;
-        padding-bottom: 1px;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 0px;
+        border-style: none;
+        border-width: 2px;
+        box-shadow: 0px 0px 0px var(--white);
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    div.adjust_but_position {
+        right: 0px !important;
     }
 
     div#menu {

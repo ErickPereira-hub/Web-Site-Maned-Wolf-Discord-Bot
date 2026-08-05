@@ -32,3 +32,15 @@ section.overall > p {
 h2.edit_title {
     color: var(--white)
 }
+
+.adjust_sides {
+    padding-left: 140px;
+    padding-right: 140px;
+}
+
+@media (max-width: 1200px) {
+    .adjust_sides {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+}
