@@ -22,7 +22,7 @@ export default function injectJSON() {
                     </div>
                 </div>
             </section>
-            <hr>
+            <hr class = "tutorial_line">
         `
     }
 }

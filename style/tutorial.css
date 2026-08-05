@@ -38,9 +38,19 @@ h2.edit_title {
     padding-right: 140px;
 }
 
+.tutorial_line {
+    width: 80%;
+}
+
 @media (max-width: 1200px) {
+
     .adjust_sides {
         padding-left: 10px;
         padding-right: 0px;
     }
+
+    .tutorial_line {
+        width: 95%;
+    }
+
 }
