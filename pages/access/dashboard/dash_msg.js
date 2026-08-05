@@ -1,5 +1,6 @@
 import { stdHistStyle } from "./std_style.js";
 import { getSubProbArray } from "./get_sub_prob_array.js";
+import { loadResponsiveChart } from "./responsive_chart.js";
 
 export function getMsgDashboard(JSON, pallet) {
     document.getElementById("itxt_msg_poisson").innerText = `The histogram bellow shows the probability distribution of acquiring a new ammount of messages tomorrow. Moreover, the probability of obtaining ${JSON["new_msg_probability"]["from"]} to ${JSON["new_msg_probability"]["until"]} new messages tomorrow is ${(JSON["new_msg_probability"]["probability"] * 100).toFixed(2)}%`
@@ -9,6 +10,9 @@ export function getMsgDashboard(JSON, pallet) {
     const qtt = []; //<--- Volume of messages
     const prob = []; //<--- Probability of each volume based on Poisson distribution
     
+    const opts = stdHistStyle("Probability distribution for new ammount of members tomorrow", pallet, true);
+    loadResponsiveChart(opts);
+
     //Filling the arrays of volume and probability
     for (let i = 0; i < newMsgProbabilities.length; i++) {
         qtt.push(newMsgProbabilities[i][0]);
@@ -41,6 +45,6 @@ export function getMsgDashboard(JSON, pallet) {
                 }
             ]
         },
-        options : stdHistStyle("Probability distribution for new ammount of members tomorrow", pallet, true)
+        options : opts
     })
 }

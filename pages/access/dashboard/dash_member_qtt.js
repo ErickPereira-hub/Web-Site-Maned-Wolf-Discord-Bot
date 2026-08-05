@@ -1,4 +1,5 @@
 import { stdxAxisStyle, stdTitle, stdLegend } from "./std_style.js";
+import { loadResponsiveChart } from "./responsive_chart.js";
 
 export function getMembersDashboard(JSON, pallet) {
     
@@ -42,6 +43,29 @@ export function getMembersDashboard(JSON, pallet) {
         comparativeArray.push(JSON["member_prediction"][i]);
     }
 
+    const opts = {
+            legend : stdLegend(20),
+            title : stdTitle(`Quantity of members per day for the last ${membersQtt.length} days`),
+            scales : {
+                xAxes : stdxAxisStyle(pallet),
+                yAxes : [
+                    {
+                        gridLines : {
+                            color : pallet["COL7"],
+                            zeroLineColor : pallet["COL7"]
+                        },
+                        ticks : {
+                            fontColor : pallet["COL8"],
+                            fontSize : 15,
+                            min : Math.min(...comparativeArray) - EXTREME_DIST >= 0 ? Math.min(...comparativeArray) - EXTREME_DIST : 0,
+                            max : Math.max(...comparativeArray) + EXTREME_DIST
+                        }
+                    }
+                ]
+            }
+        }
+    loadResponsiveChart(opts); //<--- Responsiviness over chart
+
     new Chart("imember_qtt", {
         type : "line",
         data : {
@@ -65,26 +89,6 @@ export function getMembersDashboard(JSON, pallet) {
                 }
             ]
         },
-        options : {
-            legend : stdLegend(20),
-            title : stdTitle(`Quantity of members per day for the last ${membersQtt.length} days`),
-            scales : {
-                xAxes : stdxAxisStyle(pallet),
-                yAxes : [
-                    {
-                        gridLines : {
-                            color : pallet["COL7"],
-                            zeroLineColor : pallet["COL7"]
-                        },
-                        ticks : {
-                            fontColor : pallet["COL8"],
-                            fontSize : 15,
-                            min : Math.min(...comparativeArray) - EXTREME_DIST >= 0 ? Math.min(...comparativeArray) - EXTREME_DIST : 0,
-                            max : Math.max(...comparativeArray) + EXTREME_DIST
-                        }
-                    }
-                ]
-            }
-        }
+        options : opts
     }) //<--- Ploting the graph of quantity of members in past, present and future
 }

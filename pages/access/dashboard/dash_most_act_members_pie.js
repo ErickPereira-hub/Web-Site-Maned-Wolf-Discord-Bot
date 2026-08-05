@@ -6,7 +6,7 @@ export function getMostActiveMembersDashboard(JSON, pallet) {
     const colors = [pallet["COL1"], pallet["COL2"], pallet["COL3"], pallet["COL4"], pallet["COL5"]];
     const labels = [];
     const activity = [];
-
+    
     mostActiveMembersJSON.forEach(data => {
         const objMember =  data
         const label = Object.keys(objMember)[0];

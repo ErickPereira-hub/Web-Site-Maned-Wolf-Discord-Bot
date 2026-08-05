@@ -53,7 +53,9 @@ export function genDashboardHTML(JSON) {
         <section class = "overall" id = "isec_msg">
             <h2 class = "dash-title">Information about the messages</h2>
             <p id = "itxt_msg_poisson"></p>
-            <canvas id = "inew_msg_dist" class = "std-dashboard"></canvas>
+            <div>
+                <canvas id = "inew_msg_dist" class = "std-dashboard"></canvas>
+            </div>    
             <p class = "aside_msg">You can access the content of deleted and updated messages. This information is sensitive and may include important auditory data. Please, ensure that auditory content is kept strictly confidential and never shared with anyone. The downloaded file will be in csv format. You can open it with any text editor or work with it throughout Excel or Google Sheets.</p>     
             <div id = "download_cont">
                 <a class = "download" href = 'http://localhost:3000/download/audit_msg?audit_type=delete'>Download Deletions</a>

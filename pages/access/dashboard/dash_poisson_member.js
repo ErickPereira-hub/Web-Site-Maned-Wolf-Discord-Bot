@@ -1,5 +1,6 @@
 import { stdHistStyle } from "./std_style.js";
 import { getSubProbArray } from "./get_sub_prob_array.js";
+import { loadResponsiveChart } from "./responsive_chart.js";
 
 export function getPoissonForMembersDashboard(JSON, pallets) {
     
@@ -21,6 +22,9 @@ export function getPoissonForMembersDashboard(JSON, pallets) {
 
     const subProb = getSubProbArray(probToShow.from, probToShow.until, newMemberProbabilities);
 
+    const opts = stdHistStyle("Probability distribution for new ammount of members tomorrow", pallets, true); 
+    loadResponsiveChart(opts);
+
     //Generating the chart
     new Chart("iprob_new_members", {
         type : "bar",
@@ -39,6 +43,6 @@ export function getPoissonForMembersDashboard(JSON, pallets) {
                 }
             ]
         },
-        options : stdHistStyle("Probability distribution for new ammount of members tomorrow", pallets, true)
+        options : opts
     })
 }
