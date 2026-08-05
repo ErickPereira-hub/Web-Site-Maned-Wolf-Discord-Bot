@@ -176,6 +176,8 @@ div.dice_logo {
 
     #download_cont {
         margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
 }
