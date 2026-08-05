@@ -252,3 +252,12 @@ section.overall {
         margin-top: 0px;
     }
 }
+
+@media (max-width: 420px) {
+    
+    div.access_but {
+        width: 85% !important;
+        right: 5px !important;
+    }
+
+}
