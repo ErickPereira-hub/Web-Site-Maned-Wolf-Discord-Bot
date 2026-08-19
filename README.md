@@ -1,14 +1,10 @@
 # Web Site for the Maned Wolf Discord Bot
 
----
-
 ## Overview
 
 This repository contains only the frontend of the application. It does not implement any business logic itself — it is a pure consumer of a REST API provided by a separate backend project. All data displayed here (authentication, analytics, message history, etc.) is fetched from that external API.
 
 The project with the API and the bot is: https://github.com/ErickPereira-hub/Maned-Wolf-Discord-BOT
-
----
 
 ## Features
 
