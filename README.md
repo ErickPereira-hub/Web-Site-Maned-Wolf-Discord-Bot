@@ -1,8 +1,8 @@
-**Web Site for the Maned Wolf Discord Bot**
+# Web Site for the Maned Wolf Discord Bot
 
 ---
 
-**Overview**
+## Overview
 
 This repository contains only the frontend of the application. It does not implement any business logic itself — it is a pure consumer of a REST API provided by a separate backend project. All data displayed here (authentication, analytics, message history, etc.) is fetched from that external API.
 
@@ -10,7 +10,7 @@ The project with the API and the bot is: https://github.com/ErickPereira-hub/Man
 
 ---
 
-**Features**
+## Features
 
 **Discord Bot Tutorial Page**
 
@@ -43,5 +43,5 @@ The application provides a feature to download a CSV audit report of deleted and
 First Screenshot of the dashboard
 ![](./src/imgs/btf_dashboard.png)
 
-Second screenshot of the dashboard (there are much more than these two charts)
+Second screenshot of the dashboard (there are much more than these charts)
 ![](./src/imgs/dashboard.png)
