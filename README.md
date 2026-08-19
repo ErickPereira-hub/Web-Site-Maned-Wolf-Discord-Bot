@@ -35,7 +35,7 @@ The application provides a feature to download a CSV audit report of deleted and
 ➤ Messages that were deleted, along with the original content before deletion.
 ➤ Messages that were edited, along with the original content before the edit.
 
-**Notes**
+## Notes
 
 ➤ This project is frontend-only. All persistent data, authentication logic, analytics processing, and audit logging live in the backend project.
 
