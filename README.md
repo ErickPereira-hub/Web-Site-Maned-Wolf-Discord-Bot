@@ -38,6 +38,7 @@ The application provides a feature to download a CSV audit report of deleted and
 **Notes**
 
 ➤ This project is frontend-only. All persistent data, authentication logic, analytics processing, and audit logging live in the backend project.
+
 ➤ Authentication state is managed via JWT cookies exchanged with the backend; the frontend does not independently issue or verify tokens.
 
 First Screenshot of the dashboard
