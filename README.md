@@ -38,7 +38,7 @@ The application provides a feature to download a CSV audit report of deleted and
 ➤ Authentication state is managed via JWT cookies exchanged with the backend; the frontend does not independently issue or verify tokens.
 
 First Screenshot of the dashboard
-![](./src/imgs/btf_dashboard.png)
+![](./src/imgs/dash1.png)
 
 Second screenshot of the dashboard (there are much more than these charts)
-![](./src/imgs/dashboard.png)
+![](./src/imgs/dash2.png)
